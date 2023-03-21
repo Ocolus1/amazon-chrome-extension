@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bs-font-sans-serif: 'Roboto', sans-serif;
+    }
+
+    body {
+      background: rgb(2,0,36);
+      background: linear-gradient(158deg, rgba(2,0,36,1) 0%, rgba(211,212,51,0.9332983193277311) 65%, rgba(0,212,255,1) 100%);
+      color: #f8f9fa;
+      font-family: var(--bs-font-sans-serif);
+      margin: 10px;
+      width: 400px;
+      height: 400px;
+      border-radius: 20px;
+    }
+
+    body.full-height {
+      height: 100%;
+    }
+
+
+    #analyze-reviews-button {
+      display: none;
+    }
+
+    #temp-text {
+      display: none;
+    }
+
+    #loader {
+      display: none;
+    }
+
+
+    p, li {
+  font-size: 18px;
+}
+  </style>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="text-center">
+      <nav class="mt-5 mb-3">
+        <h1>Amazon Review Analyzer</h1>
+      </nav>
+      <p>Analyze your reviews and get awesome suggestions to improve your product</p>
+      <h2 id="asin" class="mt-3">ASIN: </h2>
+      <button id="extractor" type="button" class="btn btn-info btn-lg">Get Started</button>
+      <button id="analyze-reviews-button" class="btn btn-success mt-3 mb-3 btn-lg">Analizar reseñas</button>
+      <p id="temp-text" >Analyzing your reviews, this might take a while</p>
+    </div>
+    <div id="results-container">
+      <div id="loader" class="text-center">
+        <button class="btn btn-success" type="button" disabled>
+        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+        Analyzing...
+      </button>
+      </div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

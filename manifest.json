@@ -1,0 +1,31 @@
+{
+	"manifest_version": 2,
+	"name": "Amazon Review Analyzer",
+	"version": "1.0",
+	"description": "Una extensión de Chrome para analizar las opiniones de productos de Amazon.",
+	"permissions": [
+		"activeTab",
+		"tabs",
+		"notifications",
+		"https://*.amazon.com/*",
+		"https://*.amazon.es/*"
+	],
+	"icons": {
+		"48": "icon.png"
+	},
+	"browser_action": {
+		"default_icon": "icon.png",
+		"default_popup": "popup.html",
+		"default_title": "Analizar reseñas"
+	},
+	"content_scripts": [
+		{
+			"matches": ["https://*.amazon.com/*", "https://*.amazon.es/*"],
+			"js": ["content.js"]
+		}
+	],
+	"background": {
+		"scripts": ["background.js"],
+		"persistent": false
+	}
+}
