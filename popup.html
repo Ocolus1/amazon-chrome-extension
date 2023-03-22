@@ -11,11 +11,11 @@
     }
 
     body {
-      background: #000;
+      background: #010A17;
       color: #fff;
-      font-family: var(--bs-font-sans-serif);
+      font-family: 'Open Sans';
       margin: 10px;
-      width: 400px;
+      width: 375px;
       height: 400px;
       border-radius: 20px;
     }
@@ -27,14 +27,47 @@
 
     #analyze-reviews-button {
       display: none;
+      background-color: #FEFEFE;
+      color: #010A17;
+      border-radius: 7px;
+      width: 300px;
+      height: 53px;
+      font-size: 1.2em;
+      margin-top: 5rem;
     }
 
     #temp-text {
       display: none;
+      color: #747474;
     }
 
     #loader {
       display: none;
+    }
+
+    .min-div {
+      text-align: center;
+    }
+
+    .start-btn {
+      background-color: #F5C00B;
+      color: #010A17;
+      border-radius: 7px;
+      width: 167px;
+      height: 53px;
+      font-size: 1.2em;
+      margin-top: 5rem;
+    }
+
+    .loading-btn {
+      background-color: #F5C00B;
+      opacity: 0.62;
+      color: #010A17;
+      border-radius: 7px;
+      width: 200px;
+      height: 53px;
+      font-size: 1.2em;
+      margin-top: 4rem;
     }
 
 
@@ -44,24 +77,27 @@
   </style>
 </head>
 <body>
-  <div class="container-fluid">
-    <div class="text-center">
-      <nav class="mt-5 mb-3">
-        <h1>Amazon Review Analyzer</h1>
-      </nav>
-      <p>Analyze your reviews and get awesome suggestions to improve your product</p>
-      <h2 id="asin" class="mt-3">ASIN: </h2>
-      <button id="extractor" type="button" class="btn btn-info btn-lg">Get Started</button>
-      <button id="analyze-reviews-button" class="btn btn-success mt-3 mb-3 btn-lg">Analizar reseñas</button>
-      <p id="temp-text" >Analyzing your reviews, this might take a while</p>
-    </div>
-    <div id="results-container">
-      <div id="loader" class="text-center">
-        <button class="btn btn-success" type="button" disabled>
-        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-        Analyzing...
-      </button>
+  <div class="container">
+    <div class="">
+      <div class="mt-4 mb-3 text-center">
+        <h1 class="fw-bolder">Amazon Review Analyzer</h1>
+        <p>Analyze your reviews and get awesome suggestions to improve your product</p>
       </div>
+      <h5 id="asin" class="mt-5 text-left ms-4">ASIN: </h5>
+      <div class="min-div">
+        <button id="extractor" type="button" 
+        class="start-btn">GET STARTED</button>
+        <button id="analyze-reviews-button" class="mb-3">ANALIZAR RESENAS</button>
+        <div id="loader" class="text-center">
+        <button class="loading-btn mb-3" type="button" disabled>
+          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+          Analyzing...
+        </button>
+      </div>
+        <p id="temp-text" >Analyzing your reviews, this might take a while</p>
+      </div>
+    </div>
+    <div id="results-container" class="container">
     </div>
   </div>
   <script src="popup.js"></script>

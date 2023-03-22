@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 (item) =>
                   `<p class="lh-sm">${item
                     .trim()
-                    .replace(/[->]/g, '')}</p>`
+                    .replace(/[-]/g, '')}</p>`
               )
               .join('')}
                     </blockquote>
@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 (item) =>
                   `<p class="lh-sm">${item
                     .trim()
-                    .replace(/[->]/g, '')}</p>`
+                    .replace(/[-]/g, '')}</p>`
               )
               .join('')}
                     </blockquote>
@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 (item) =>
                   `<p class="lh-sm">${item
                     .trim()
-                    .replace(/[->]/g, '')}</p>`
+                    .replace(/[-]/g, '')}</p>`
               )
               .join('')}
                     </blockquote>
@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
       asin = getAsinFromUrl(tabs[0].url);
       if (asin) {
-        document.getElementById("asin").innerText = `ASIN: ${asin}`;
+        document.getElementById("asin").innerText = `ASIN:  ${asin}`;
         analyzeButton.style.display = "inline-block";
         extractor.style.display = 'none';
       }
