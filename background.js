@@ -30,18 +30,26 @@ const handleAnalyzeReviews = async (asin, port) => {
 		const data = await response.json();
 		console.log('Datos recibidos del servidor:', data);
 
-		state.results = {
-			positives: data.positives
-				.split('.')
-				.filter((item) => item.trim().length > 0),
-			negatives: data.negatives
-				.split('.')
-				.filter((item) => item.trim().length > 0),
-			improvements: data.improvements
-				.split('.')
-				.filter((item) => item.trim().length > 0),
-			image_url: data.image_url,
-		};
+    if (data.response) {
+      state.results = {
+        response : data.response
+      }
+    }else {
+
+      state.results = {
+        positives: data.positives
+          .split('.')
+          .filter((item) => item.trim().length > 0),
+        negatives: data.negatives
+          .split('.')
+          .filter((item) => item.trim().length > 0),
+        improvements: data.improvements
+          .split('.')
+          .filter((item) => item.trim().length > 0),
+        image_url: data.image_url,
+      };
+    }
+
 		state.error = null;
     state.loading = false;
 	  state.tempoText = false;
