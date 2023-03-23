@@ -51,13 +51,14 @@ document.addEventListener("DOMContentLoaded", () => {
                   <div class="card-body text-muted">
                     <blockquote class="blockquote mb-0">
                       ${items
-              .map(
-                (item) =>
-                  `<p class="lh-sm">${item
-                    .trim()
-                    .replace(/[-]/g, '')}</p>`
-              )
-              .join('')}
+							.map(
+								(item, id) =>
+									`<p class="lh-sm">${id + 1}. ${item
+										.trim()
+										.replace(/[-]/g, '')
+										.replace(/^(?:\d+\.)?\s*/, '')}</p>`
+							)
+							.join('')}
                     </blockquote>
                   </div>
                 </div>
@@ -70,13 +71,14 @@ document.addEventListener("DOMContentLoaded", () => {
                   <div class="card-body text-muted">
                     <blockquote class="blockquote mb-0">
                       ${items
-              .map(
-                (item) =>
-                  `<p class="lh-sm">${item
-                    .trim()
-                    .replace(/[-]/g, '')}</p>`
-              )
-              .join('')}
+							.map(
+								(item, id) =>
+									`<p class="lh-sm">${id + 1}. ${item
+										.trim()
+										.replace(/[-]/g, '')
+										.replace(/^(?:\d+\.)?\s*/, '')}</p>`
+							)
+							.join('')}
                     </blockquote>
                   </div>
                 </div>
@@ -89,13 +91,14 @@ document.addEventListener("DOMContentLoaded", () => {
                   <div class="card-body">
                     <blockquote class="blockquote mb-0">
                       ${items
-              .map(
-                (item) =>
-                  `<p class="lh-sm">${item
-                    .trim()
-                    .replace(/[-]/g, '')}</p>`
-              )
-              .join('')}
+							.map(
+								(item, id) =>
+									`<p class="lh-sm">${id+1}. ${item
+										.trim()
+										.replace(/[-]/g, '')
+										.replace(/^(?:\d+\.)?\s*/, '')}</p>`
+							)
+							.join('')}
                     </blockquote>
                   </div>
                 </div>

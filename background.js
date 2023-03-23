@@ -29,6 +29,7 @@ const handleAnalyzeReviews = async (asin, port) => {
 
 		const data = await response.json();
 		console.log('Datos recibidos del servidor:', data);
+    alert("this is fucked up", data)
 
     if (data.response) {
       state.results = {
@@ -46,7 +47,6 @@ const handleAnalyzeReviews = async (asin, port) => {
         improvements: data.improvements
           .split('.')
           .filter((item) => item.trim().length > 0),
-        image_url: data.image_url,
       };
     }
 
